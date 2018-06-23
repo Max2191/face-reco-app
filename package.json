@@ -1,0 +1,28 @@
+{
+  "name": "alpha",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "clarifai": "^2.6.0",
+    "lodash": "^4.17.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-particles-js": "^2.1.0",
+    "react-scripts": "1.1.1",
+    "react-tilt": "^0.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start1": "nodemon",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
