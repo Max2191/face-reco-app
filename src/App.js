@@ -66,6 +66,7 @@ onInputChange = (event) => {
 this.setState({input: event.target.value});
 }
 
+
 onButtonSubmit = () => {
   this.setState({imageUrl: this.state.input});
   app.models
@@ -89,32 +90,32 @@ onRouteChange = (route) => {
 }
 
   render() {
-   const { isSignedin, imageUrl, route, box} = this.state;
-     return (
+  
+    const { isSignedIn, imageUrl, route, box } = this.state;
+    return (
       <div className="App">
-              <Particles className='particles'
-              params={particlesOptions} 
+         <Particles className='particles'
+          params={particlesOptions}
+        />
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        { route === 'home'
+          ? <div>
+              <Logo />
+              <Rank
+          
               />
-
-
-              <Navigation isSignedin={isSignedin} onRouteChange={this.onRouteChange} />
-              { this.state.route === 'home' ? 
-               <div>
-                  <Logo /> 
-                  <Rank />
-                  <ImageLinkForm 
-                  onInputChange={this.onInputChange} 
-                  onButtonSubmit={this.onButtonSubmit} 
-                  />     
-                  <FaceRecognition box={box} imageUrl={imageUrl} />
-                </div>
-                 : (
-                   route ==='Signin' 
-                    ? <Signin onRouteChange={this.onRouteChange}/>
-                    : <Register onRouteChange={this.onRouteChange}/>
-                  )
-              }
-                 
+              <ImageLinkForm
+                onInputChange={this.onInputChange}
+                onButtonSubmit={this.onButtonSubmit}
+              />
+              <FaceRecognition box={box} imageUrl={imageUrl} />
+            </div>
+          : (
+             route === 'Signin'
+             ? <Signin onRouteChange={this.onRouteChange}/>
+             : <Register onRouteChange={this.onRouteChange}/>
+            )
+        }
       </div>
     );
   }
